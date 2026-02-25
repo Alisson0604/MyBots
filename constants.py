@@ -2,8 +2,8 @@ import numpy
 
 steps = 1000
 
-amplitude = numpy.pi/6
-frequency = 10
+amplitude = -numpy.pi/4
+frequency = 50
 offset = 3
 
-maxForce = 50 
+maxForce = 20 

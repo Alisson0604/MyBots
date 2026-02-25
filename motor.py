@@ -14,16 +14,16 @@ class MOTOR:
         self.frequency = c.frequency
         self.offset = c.offset
 
-        if self.jointName == "Torso_BackLeg":
+        if self.jointName == b'Torso_FrontLeg':
             self.frequency = c.frequency
         else:
-            self.frequency = c.frequency / 2
+            self.frequency = c.frequency / 4
 
         self.motorValues = numpy.zeros(c.steps)
 
         for t in range(c.steps):
             self.motorValues[t] = self.amplitude * numpy.sin(
-                self.frequency * t * (1/240) + self.offset
+                self.frequency * t + self.offset
             )
 
     def Set_Value(self, robot, t):
