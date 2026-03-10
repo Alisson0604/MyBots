@@ -22,6 +22,7 @@ class SIMULATION:
             time.sleep(1/20)
 
             self.robot.Sense(i)
+            self.robot.Think()
             self.robot.Act(i)
 
     def __del__(self):
