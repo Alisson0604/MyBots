@@ -18,7 +18,7 @@ def Generate_Body():
 
     pyrosim.Start_URDF("body.urdf")
 
-    # ROOT LINK (ABSOLUTO)
+
     pyrosim.Send_Cube(
         name="Torso",
         pos=[0,0,1.5],
@@ -66,6 +66,11 @@ def Generate_Brain():
 
     pyrosim.Send_Motor_Neuron( name = 3 , jointName = "Torso_BackLeg")
     pyrosim.Send_Motor_Neuron( name = 4 , jointName = "Torso_FrontLeg")
+
+    pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = 4.0 )
+    pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 3 , weight = -4.0 )
+    pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 4 , weight = -4.0 )
+    pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 4 , weight = -4.0)
     pyrosim.End()
 
 Create_World()

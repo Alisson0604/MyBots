@@ -31,7 +31,6 @@ class ROBOT:
     def Prepare_To_Act(self):
         for jointName in pyrosim.jointNamesToIndices:
             self.motors[jointName] = MOTOR(jointName)
-            print(jointName)
        
     def Act(self, t):
         for neuronName in self.nn.Get_Neuron_Names():
@@ -43,12 +42,7 @@ class ROBOT:
 
                 self.motors[jointName].Set_Value(self, desiredAngle)
 
-                print(neuronName, jointName, desiredAngle)
-        
-        #for motor in self.motors.values():
-        #    motor.Set_Value(self, t)
-
     def Think(self):
         self.nn.Update()
-        self.nn.Print()
+        #self.nn.Print()
 
