@@ -1,6 +1,6 @@
 import numpy
 
-steps = 5000
+steps = 1000
 
 amplitude = numpy.pi/3
 frequency = 5
