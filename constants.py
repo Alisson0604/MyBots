@@ -7,3 +7,5 @@ frequency = 5
 offset = numpy.pi
 
 maxForce = 40 
+
+numberOfGenerations = 10
